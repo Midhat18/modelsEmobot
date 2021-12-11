@@ -1,0 +1,17 @@
+Gender,Age,"Feeling nervous, anxious or on edge?
+",Not being able to stop or control worrying?,"Worrying too much about different things?
+","Trouble relaxing?
+","Being so restless that it is hard to sit still?
+","Becoming easily annoyed or irritable?
+",Feeling afraid as if something awful might happen?,Anxiety(Target Class)
+male,25,1,1,2,1,2,2,2,moderate
+female,20,2,1,2,2,2,2,2,moderate
+female,17,1,2,2,2,2,2,2,moderate
+male,27,2,1,1,1,1,2,1,mild
+female,29,1,2,2,1,1,2,1,mild
+male,30,2,2,2,1,2,2,2,moderate
+male,22,2,3,3,2,2,3,3,severe
+male,28,3,3,3,3,3,3,3,severe
+female,30,1,1,2,2,1,2,2,moderate
+male,20,2,2,1,1,1,2,2,mild
+male,19,0,1,1,0,1,1,2,mild
