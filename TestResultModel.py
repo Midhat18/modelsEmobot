@@ -89,7 +89,7 @@ def TestResult(answersArray):
     print(arrayResult)
     arrlen =len(arrayResult)
     result = arrayResult[arrlen-1]
-    print("you have ",arrayResult[arrlen-1],"Anxiety")
+    result = "you have ",arrayResult[arrlen-1],"Anxiety"
     return result
 #print(count)
 
