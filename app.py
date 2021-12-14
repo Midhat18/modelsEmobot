@@ -32,13 +32,7 @@ def meditationrecommendation():
     
     return jsonify(result = recommended_meditation(health_issue,recommend))
 
-@app.route('/chat', methods = ['POST'])
-def chatResponse():
-    requestData = request.data
-    print("chat ")
-    requestData = json.loads(requestData.decode('utf-8'))
-    userMessage = requestData['message']
-    return jsonify(responseUser = getresponse(userMessage))
+
 
 @app.route('/home', methods = ['GET'])
 def home1():
