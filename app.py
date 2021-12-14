@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request,render_template
 from TestResultModel import TestResult
 from MeditationRecommendations import recommended_meditation
-from Chatbotfile import getresponse
+
 import json
 
 
