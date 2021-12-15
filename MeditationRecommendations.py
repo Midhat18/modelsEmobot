@@ -9,8 +9,8 @@ import pandas as pd
 from numpy import *
 import numpy as np
 def recommended_meditation(healthissue,medi_rec):
-    data = pd.read_csv('c:/Users/DELL/Desktop/meditation_filtering.csv')
-    data1 = pd.read_csv('c:/Users/DELL/Desktop/health_issue.csv')
+    data = pd.read_csv('meditation_filtering.csv')
+    data1 = pd.read_csv('health_issue.csv')
     health_issue_file_data =data1.values
     meditation_file_data = data.values
     meditation_files_entries = len(meditation_file_data)
