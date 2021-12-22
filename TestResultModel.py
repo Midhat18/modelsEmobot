@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 28 03:05:10 2021
 
-@author: HP
-"""
 
 import pandas as pd
 from numpy import *
@@ -11,54 +6,69 @@ import numpy as np
 
 
 def TestResult(answersArray):
-#test data file read 
-    data = pd.read_csv('Test_Anxiety.csv')
-    result = ''
+    mainarray=[]
+    testName=''
     
-#Changing to array
-    array = data.values
-#print(array)
-    fileRows= len(array)
-#print(array)
+    
+    if len(answersArray)==7:
+        #test data file read 
+        data = pd.read_csv('Test_Anxiety.csv')
+        #Changing to array
+        array = data.values
+    #print(array)
+        fileRows= len(array)
+    #print(array)
 
-#using numpy class for creating dataframe
-    df = pd.DataFrame(array)
-    print(df.head())
+    #using numpy class for creating dataframe
+        df = pd.DataFrame(array)
+        print(df.head())
 
-#Testfile Required index selection extracting irrelevant indexes
-    maindf = df[[ 2, 3, 4, 5, 6,7,8,9]]
+    #Testfile Required index selection extracting irrelevant indexes
+        maindf = df[[ 2, 3, 4, 5, 6,7,8,9]]
 
-#again conversion to 2D array
-    mainarray = maindf.values
-    print(mainarray)
+    #again conversion to 2D array
+        mainarray = maindf.values
+        testName = "Anxiety"
+    else:
+        data = pd.read_csv('Patient_Health_Questionnaire.csv')
+        #Changing to array
+        array = data.values
+    #print(array)
+        fileRows= len(array)
+    #print(array)
+
+    #using numpy class for creating dataframe
+        df = pd.DataFrame(array)
+        print(df.head())
+
+    #Testfile Required index selection extracting irrelevant indexes
+        maindf = df[[ 2, 3, 4, 5, 6,7,8,9,10,11,12,13]]
+
+    #again conversion to 2D array
+        mainarray = maindf.values
+        testName = "Depression"
+        
+       
+    return processResult(mainarray,answersArray,fileRows,testName)
+#print(count)
+
+
+def processResult(array,array2,filerow,testName):
+    arrarResult=[]
+    result = ''
+    counter=0
+    count=0
+    print(array)
 
 #Array splitting
-    arr=np.array(mainarray)
+    arr=np.array(array)
     arr.shape
-    arr3=np.split(arr,fileRows)
-
-#Counter save value of matches
-    counter=0
-#Maximun match in a row count
-    count=0
-
+    arr3=np.split(arr,filerow)
 #pattern matched array store in here
-    arrarResult=[]
+    
 
 #Input array
-    array1= answersArray
-#File Data
-#['male' 25 1 1 2 1 2 2 2 'moderate']
-# ['female' 20 2 1 2 2 2 2 2 'moderate']
-# ['female' 17 1 2 2 2 2 2 2 'moderate']
- #['male' 27 2 1 1 1 1 2 1 'mild']
- #[#'female' 29 1 2 2 1 1 2 1 'mild']
- #['#male' 30 3 2 2 1 2 2 2 'moderate']
-# ['m#ale' 22 2 3 3 2 2 3 3 'severe']
-# ['male' 28 3 3 3 3 3 3 3 'severe']
-# ['female' 30 1 1 2 2 1 2 2 'moderate']
-# ['male' 20 3 2 1 1 1 2 2 'mild']#
-
+    array1= array2
 #pattern matching
 
     for i in range(len(arr3)):
@@ -75,7 +85,6 @@ def TestResult(answersArray):
                 print("Counter value",counter,"count value",count)
                 arr9=arr8
         
-    
         if counter>count:
             count=counter
             arrayResult=arr9
@@ -88,10 +97,9 @@ def TestResult(answersArray):
 
     print(arrayResult)
     arrlen =len(arrayResult)
-    result = arrayResult[arrlen-1]
-    result = arrayResult[arrlen-1]," Anxiety"
+    result = arrayResult[arrlen-1]+testName
+    print(result)
+    
     return result
-#print(count)
-
 
     
