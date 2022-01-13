@@ -42,7 +42,7 @@ def TestResult(answersArray):
         print(df.head())
 
     #Testfile Required index selection extracting irrelevant indexes
-        maindf = df[[ 2, 3, 4, 5, 6,7,8,9,10,11,12,13]]
+        maindf = df[[ 2, 3, 4, 5, 6,7,8,9,10,11]]
 
     #again conversion to 2D array
         mainarray = maindf.values
